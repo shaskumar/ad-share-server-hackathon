@@ -7,5 +7,5 @@ mvn clean package
 ```
 ## Deploy
 ```shell
-    java -jar spring-mock-server-*.jar --spring.config.location=file:///path/to/application.properties
+java -jar spring-mock-server-*.jar --spring.config.location=file:///path/to/application.properties
 ```
