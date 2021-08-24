@@ -1,5 +1,6 @@
 package cn.inmobi.blr.springmockserver.dto.bundle;
 
+import cn.inmobi.blr.springmockserver.model.BundleData;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,5 +10,5 @@ public class GetBundleResponse {
     private int code;
     private String domain;
     private String listVersion;
-    private String data;
+    private BundleData data;
 }
