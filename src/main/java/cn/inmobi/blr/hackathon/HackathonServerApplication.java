@@ -1,13 +1,13 @@
-package cn.inmobi.blr.springmockserver;
+package cn.inmobi.blr.hackathon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringMockServerApplication {
+public class HackathonServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringMockServerApplication.class, args);
+		SpringApplication.run(HackathonServerApplication.class, args);
 	}
 
 }
