@@ -87,6 +87,7 @@ public class AdShareService {
             user.setPassword(userData.getPassword());
             user.setSharedAds(0);
             user.setTotalAdCash(0);
+            UserRepository.UserMap.put(userData.getUsername(), user);
             return true;
         }
         else{
