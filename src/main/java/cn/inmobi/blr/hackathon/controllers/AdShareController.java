@@ -90,4 +90,21 @@ public class AdShareController {
         }
     }
 
+    @PostMapping(path = "/login/verify", consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Boolean> loginVerify(@RequestBody RegistrationData registrationData){
+
+        if(null != registrationData){
+            if(adShareService.verifyLogin(registrationData).getSuccess()){
+                return new ResponseEntity<>(true, HttpStatus.ACCEPTED);
+            }
+            else{
+                return new ResponseEntity<>(false,HttpStatus.UNAUTHORIZED);
+            }
+        }
+        else{
+            return new ResponseEntity<>(false, HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
