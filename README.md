@@ -1,4 +1,4 @@
-# Spring Mock Server
+# Spring Mock Server For Hackathon
 Spring boot application used for Mocking Rest APIs
 
 ## Build
