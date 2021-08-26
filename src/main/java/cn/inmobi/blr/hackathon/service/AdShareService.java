@@ -127,4 +127,19 @@ public class AdShareService {
         UserRepository.UserMap.get(userId).setTotalAdCash(updatedCash);
         return new ServiceResponse(true, "Adcash Added for "+userId);
     }
+
+    public ServiceResponse verifyLogin(RegistrationData registrationData) {
+
+        String username = registrationData.getUsername();
+        String password = registrationData.getPassword();
+
+        if (null != UserRepository.UserMap.get(username)){
+            User user = UserRepository.UserMap.get(username);
+            if (user.getPassword().equals(password)){
+                return new ServiceResponse(true, "Successful!");
+            }
+        }
+       return new ServiceResponse(false, "Either user doesn't exists " +
+               "or password is wrong!!");
+    }
 }
