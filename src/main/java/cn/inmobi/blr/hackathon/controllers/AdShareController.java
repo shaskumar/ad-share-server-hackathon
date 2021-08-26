@@ -99,7 +99,7 @@ public class AdShareController {
                 return new ResponseEntity<>(true, HttpStatus.ACCEPTED);
             }
             else{
-                return new ResponseEntity<>(false,HttpStatus.FORBIDDEN);
+                return new ResponseEntity<>(false,HttpStatus.UNAUTHORIZED);
             }
         }
         else{
