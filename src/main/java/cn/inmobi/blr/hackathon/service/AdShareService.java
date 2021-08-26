@@ -68,15 +68,20 @@ public class AdShareService {
         if (AdRepository.AdMap == null || AdRepository.AdMap.isEmpty() ||
                 AdRepository.AdMap.get(adId) == null) {
             System.out.println("Ad not found");
-            return new ServiceResponse(false, "AdId not found");
+            AdData adData = new AdData();
+            adData.setAdId(adId);
+            adData.setShares(0);
+            adData.setLikes(0);
+            adData.setClicks(0);
+            AdRepository.AdMap.put(adId, adData);
         }
-        else {
-            //increase number of shares
-            Integer currShares = AdRepository.AdMap.get(adId).getShares();
-            AdRepository.AdMap.get(adId).setShares(currShares+1);
-            String generatedLink = "http://hostname/share2/userid="+userId+"adCreativeId="+adId;
-            return new ServiceResponse(true, generatedLink);
-        }
+
+        //increase number of shares
+        Integer currShares = AdRepository.AdMap.get(adId).getShares();
+        AdRepository.AdMap.get(adId).setShares(currShares+1);
+        String generatedLink = "http://hostname/share2/userid="+userId+"adCreativeId="+adId;
+        return new ServiceResponse(true, generatedLink);
+
     }
 
     public boolean register(RegistrationData userData){
@@ -108,15 +113,18 @@ public class AdShareService {
         if (AdRepository.AdMap == null || AdRepository.AdMap.isEmpty() ||
                 AdRepository.AdMap.get(adId) == null) {
             System.out.println("Ad not found");
-            return new ServiceResponse(false, "AdId not found");
+            AdData adData = new AdData();
+            adData.setAdId(adId);
+            adData.setShares(0);
+            adData.setLikes(0);
+            adData.setClicks(0);
+            AdRepository.AdMap.put(adId, adData);
         }
-        else {
-            //increase number of clicks and update adcash for user who shared
-            Integer currClicks = AdRepository.AdMap.get(adId).getClicks();
-            AdRepository.AdMap.get(adId).setClicks(currClicks+1);
-            Integer updatedCash = UserRepository.UserMap.get(userId).getTotalAdCash() + 1;
-            UserRepository.UserMap.get(userId).setTotalAdCash(updatedCash);
-            return new ServiceResponse(true, "Adcash Added for "+userId);
-        }
+        //increase number of clicks and update adcash for user who shared
+        Integer currClicks = AdRepository.AdMap.get(adId).getClicks();
+        AdRepository.AdMap.get(adId).setClicks(currClicks+1);
+        Integer updatedCash = UserRepository.UserMap.get(userId).getTotalAdCash() + 1;
+        UserRepository.UserMap.get(userId).setTotalAdCash(updatedCash);
+        return new ServiceResponse(true, "Adcash Added for "+userId);
     }
 }
