@@ -1,4 +1,4 @@
-package cn.inmobi.blr.hackathon;
+package hackweek.blr.project.hackathon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package cn.inmobi.blr.hackathon.repository;
+package hackweek.blr.project.hackathon.repository;
 
-import cn.inmobi.blr.hackathon.model.User;
+import hackweek.blr.project.hackathon.model.User;
 
 import java.util.HashMap;
 

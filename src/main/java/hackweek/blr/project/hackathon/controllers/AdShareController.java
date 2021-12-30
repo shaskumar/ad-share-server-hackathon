@@ -1,7 +1,10 @@
-package cn.inmobi.blr.hackathon.controllers;
+package hackweek.blr.project.hackathon.controllers;
 
-import cn.inmobi.blr.hackathon.model.*;
-import cn.inmobi.blr.hackathon.service.AdShareService;
+import hackweek.blr.project.hackathon.model.ClickRequest;
+import hackweek.blr.project.hackathon.model.RegistrationData;
+import hackweek.blr.project.hackathon.model.ServiceResponse;
+import hackweek.blr.project.hackathon.model.ShareRequest;
+import hackweek.blr.project.hackathon.service.AdShareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

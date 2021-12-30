@@ -1,8 +1,8 @@
-package cn.inmobi.blr.hackathon.service;
+package hackweek.blr.project.hackathon.service;
 
-import cn.inmobi.blr.hackathon.model.*;
-import cn.inmobi.blr.hackathon.repository.AdRepository;
-import cn.inmobi.blr.hackathon.repository.UserRepository;
+import hackweek.blr.project.hackathon.model.*;
+import hackweek.blr.project.hackathon.repository.AdRepository;
+import hackweek.blr.project.hackathon.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

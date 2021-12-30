@@ -1,4 +1,4 @@
-package cn.inmobi.blr.hackathon.model;
+package hackweek.blr.project.hackathon.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
